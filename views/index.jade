@@ -9,11 +9,20 @@ block content
     div(class='tabs-module', data-role = 'tabs-module')
       ul(class = 'tabs', data-role = 'tabs')
         li
-          a(href='#panel-1') Tab 1
+          a(href='#panel-1') Overview
         li
-          a(href='#panel-2') Tab 2
+          a(href='#panel-2') Analysis
       div(class = 'panel', data-role='panel', data-panel-id='#panel-1')
-        p tab panel 1
+        div.score
+          h1 Score
+          p 72
+        div.recommendations
+          h1 Recommendations
+          ul
+            li Do something
+            li Do something else
+            li Do something else
+            li Do something else
       div(class = 'panel', data-role='panel', data-panel-id='#panel-2')
         p tab panel 2
 block scripts

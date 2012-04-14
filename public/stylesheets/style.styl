@@ -22,7 +22,7 @@
 
 form.url
   border-radius: 3px
-  background: $pale_background
+  background: #fff
   border: $border
   padding: 10px
   overflow: hidden
@@ -30,11 +30,39 @@ form.url
 
   input
     float: left
-    width: 850px
+    width: 840px
     height: 30px
     line-height: 30px
-    font-size: 20px
+    font-size: 18px
     font-family: inherit
+    padding-left: 10px
 
   .button
     margin-left: 8px
+
+.score
+  border: $border
+  background: $pale_background
+  width: 200px
+  height: 200px
+  float: left
+
+  h1
+    $pale_gradient()
+    padding: 8px
+    text-align: center
+
+  p
+    font-size: 100px
+    text-align: center
+    font-weight: bold
+
+.recommendations
+  float: left
+  margin-left: 20px
+
+  ul
+    li
+      list-style-position: outside
+      padding-left: 0
+      margin-left: 15px
