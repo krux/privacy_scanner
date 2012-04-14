@@ -13,7 +13,8 @@ html(lang="en")
       PS.config = typeof !{JSON.stringify(PSConfig)} !== 'undefined' ? !{JSON.stringify(PSConfig)} : {};
   body
     header
-      div.logo= 'Privacy Scanner'
+      div.logo
+        a(href='/') PrivacyScanner
     block content
     script(src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
     script(src='js/underscore.js')
