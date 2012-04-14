@@ -22,17 +22,17 @@ app.configure(function(){
   app.use(express.static(__dirname + '/public'));
 });
 
-app.configure('development', function(){
+app.configure('development', function() {
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
+  var ajaxPrefix = '/mock_data/';
 });
 
-app.configure('production', function(){
+app.configure('production', function() {
   app.use(express.errorHandler()); 
 });
 
 // Routes
-
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
   res.render('index', {
     title: 'Privacy Scanner'
   });
