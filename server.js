@@ -5,6 +5,7 @@ var app = express.createServer();
 app.configure(function(){
     app.set('view engine', 'jade');
     app.set('view options', { layout: false });
+    app.use(express.static(__dirname + '/public'));
     app.use(express.methodOverride());
     app.use(express.bodyParser());
     app.use(app.router);
