@@ -10,7 +10,7 @@ html(lang="en")
       if (typeof PS.config === 'undefined' || !PS.config) {
         var PS = {};
       }
-      PS.config = typeof PSConfig !== 'undefined' ? !{JSON.stringify(PSConfig)} : {};
+      PS.config = typeof !{JSON.stringify(PSConfig)} !== 'undefined' ? !{JSON.stringify(PSConfig)} : {};
   body
     header
       div.logo= 'Privacy Scanner'
