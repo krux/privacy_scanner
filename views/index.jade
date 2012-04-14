@@ -12,11 +12,9 @@ block scripts
     $(document).ready(function() { 
 
       $('[data-role="submit"]').click(function(evt){
+        console.log('dfdf');
         $url = $('.url input').val();
-        console.log($url);
-        //ps.core.getHar($url);
-
-        evt.preventDefault();
+        PS.core.getHar($url);
       });
 
     });
