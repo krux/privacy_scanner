@@ -7,18 +7,32 @@
 
       a
         display: block
-        height: 40px
-        line-height: 40px
-        border: 1px solid black
+        height: 35px
+        line-height: 35px
+        border: $border
+        border-bottom: none
+        border-left: none
         padding: 0 10px
+        font-weight: bold
+        text-align: center
+        text-decoration: none
+        vertical-align: middle
+        color: $text_color
+        $pale_gradient()
 
       a.current
-        background: red
+        background: #fff
+        border-bottom: 1px solid #fff;
+        margin-bottom: -1px;
+      
+    li:first-child a
+        border-left: $border
 
   div.panel
     display: none
     clear: left
-    border: 1px solid black
+    border: $border
+    padding: 30px 10px
 
   div.panel.current
     display: block
