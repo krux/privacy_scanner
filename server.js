@@ -1,10 +1,17 @@
-var http = require("http");
-var U    = require('util');
+var U = require('util');
+var express = require('express');
+var app = express.createServer();
 
-http.createServer(function(request, response) {
-  U.debug( U.inspect( request.url ) );
-  U.debug( U.inspect( request.headers ) ); 
+app.configure(function(){
+    app.set('view engine', 'jade');
+    app.set('view options', { layout: false });
+    app.use(express.methodOverride());
+    app.use(express.bodyParser());
+    app.use(app.router);
+});
 
-  response.writeHead(204);
-  response.end();
-}).listen( process.argv[3] || 8000 );
+app.get('/', function(req, res){
+  res.render('index');
+});
+
+app.listen(3000);
