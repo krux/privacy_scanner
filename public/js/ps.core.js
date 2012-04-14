@@ -10,9 +10,9 @@ PS.core = (function ($) {
     getHar: function() {
       $.ajax({
         url: 'http://www.privacyscanner.org/static/javascript.wikia.com.json',
-        dataType: 'json',
+        dataType: 'jsonp',
         success: function(json){
-          console.log(json);
+          $('#content').html(json);
         }
       });
     }
