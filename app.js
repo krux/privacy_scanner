@@ -5,7 +5,7 @@
 
 var express = require('express');
 var app = module.exports = express.createServer();
-var port = process.argv[2] || 3000;
+var port = process.argv[3] || 3000;
 
 // Configuration
 app.configure(function(){
