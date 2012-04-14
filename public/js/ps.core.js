@@ -7,8 +7,16 @@ PS.core = (function ($) {
 
   _self = {
 
-    
-    
+    getHar: function() {
+      $.ajax({
+        url: 'http://www.privacyscanner.org/static/javascript.wikia.com.json',
+        dataType: 'json',
+        success: function(json){
+          console.log(json);
+        }
+      });
+    }
+
   };
 
   return _self;
