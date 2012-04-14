@@ -6,6 +6,7 @@
 var express = require('express');
 var app = module.exports = express.createServer();
 var port = process.argv[3] || 3000;
+var config = process.argv[5] || {};
 
 // Configuration
 app.configure(function(){
