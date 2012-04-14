@@ -3,7 +3,8 @@ if (typeof PS === 'undefined' || !PS) {
 }
 
 PS.core = (function ($) {
-  var _self;
+  var _self,
+    cache;
 
   _self = {
 
@@ -12,19 +13,19 @@ PS.core = (function ($) {
         dataType: 'json',
         url: PS.config.ajaxPrefix + '/news.yahoo.com.json',
         success: function(data){
-          _self.getParents(data);
+          cache = data;
         }
       });
     },
 
-    getParents: function(data) {
+    getParentIDs: function() {
       var parents,
         parentIds,
         cleanParents;
 
       cleanParents = [];
       
-      parentIds = _.pluck(data.log.entries, 'parentid');
+      parentIds = _.pluck(cache.log.entries, 'parentid');
       parents = _.uniq(parentIds);
       _.each(parents, function(num){
         if (num !== null) {
@@ -32,11 +33,11 @@ PS.core = (function ($) {
         }
       });
 
-      console.log(cleanParents);
+      return cleanParents;
     },
 
     returnHar: function(data) {
-      return data;
+      return cache;
     }
 
   };
