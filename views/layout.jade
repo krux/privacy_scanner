@@ -3,6 +3,14 @@ html(lang="en")
   head
     title
     link(rel = 'stylesheet', href = 'stylesheets/style.css')
+    script
+      if (typeof PS === 'undefined' || !PS) {
+        var PS = {};
+      } 
+      if (typeof PS.config === 'undefined' || !PS.config) {
+        var PS = {};
+      }
+      PS.config = !{JSON.stringify(PSConfig)};
   body
     header
       div.logo= 'Privacy Scanner'
