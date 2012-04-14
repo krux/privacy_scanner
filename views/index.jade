@@ -1,4 +1,22 @@
 extends layout
+
 block content
   h1= title 
   div#content
+    form.url
+      input()
+      div(data-role='submit') Go!
+
+block scripts
+  script(type='text/javascript')
+    $(document).ready(function() { 
+
+      $('[data-role="submit"]').click(function(evt){
+        $url = $('.url input').val();
+        console.log($url);
+        //ps.core.getHar($url);
+
+        evt.preventDefault();
+      });
+
+    });
