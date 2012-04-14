@@ -24,7 +24,9 @@ app.configure(function(){
 
 app.configure('development', function() {
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
-  var ajaxPrefix = '/mock_data/';
+  app.set('PSConfig', {
+    ajaxPrefix: '/mock_data'
+  });
 });
 
 app.configure('production', function() {
@@ -34,7 +36,8 @@ app.configure('production', function() {
 // Routes
 app.get('/', function(req, res) {
   res.render('index', {
-    title: 'Privacy Scanner'
+    title: 'Privacy Scanner',
+    PSConfig: app.set('PSConfig')
   });
 });
 
