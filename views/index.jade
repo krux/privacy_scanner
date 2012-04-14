@@ -6,16 +6,17 @@ block content
       input()
       div(data-role='submit') Go!
 
-    div(class='tabs-module', data-role = 'tabs-module')
-      ul(class = 'tabs', data-role = 'tabs')
-        li
-          a(href='#panel-1') Tab 1
-        li
-          a(href='#panel-2') Tab 2
-      div(class = 'panel', data-role='panel', data-panel-id='#panel-1')
-        p tab panel 1
-      div(class = 'panel', data-role='panel', data-panel-id='#panel-2')
-        p tab panel 2
+    //
+      div(class='tabs-module', data-role = 'tabs-module')
+        ul(class = 'tabs', data-role = 'tabs')
+          li
+            a(href='#panel-1') Tab 1
+          li
+            a(href='#panel-2') Tab 2
+        div(class = 'panel', data-role='panel', data-panel-id='#panel-1')
+          p tab panel 1
+        div(class = 'panel', data-role='panel', data-panel-id='#panel-2')
+          p tab panel 2
 block scripts
   script(type='text/javascript')
     $(document).ready(function() { 
