@@ -1,7 +1,7 @@
 /* vim: set tabstop=4 expandtab: */
 
 var HarTreeView = {
-    imageBase: "chrome://inspector/content/images/"
+  imageBase: "/vendor/treeview/images/"
 };
 
 // Overwrite with how you want the emssages displayed
