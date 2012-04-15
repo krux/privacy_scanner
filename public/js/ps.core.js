@@ -62,7 +62,17 @@ PS.core = (function ($) {
     },
 
     reportScore: function(score) {
-      $('.score p').html(score);
+      $('.score p').html(score).parent().addClass(_self.getScoreClass(score));
+    },
+
+    getScoreClass: function(score) {
+      if (score >= 80) {
+        return 'congrats';
+      } else if (score <= 80 && score >= 70) {
+        return 'warning';
+      } else {
+        return 'error';
+      }
     },
 
     reportRecommendations: function(recommendations) {
