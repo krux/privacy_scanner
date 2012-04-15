@@ -3,7 +3,7 @@ extends layout
 block content
   div#content
     form.url
-      input(class='text', placeholder='Enter a URL to learn more about its privacy rating')
+      input(class='text', placeholder='Put in a URL, we give you back privacy info.')
       input(type='submit', class='button', data-role='submit') Submit
       p.message
 
@@ -33,7 +33,7 @@ block scripts
     $(document).ready(function() { 
       PS.ui.tabs();
       PS.core.hideTabs();
-      
+
       $('form').submit(function(evt){
         PS.core.clearContent();
         PS.core.hideTabs();
