@@ -207,3 +207,18 @@ $('path').live('click', function() {
 $('a#close').live('click', function() {
   $('#lightbox').remove();
 });
+
+
+var messages = [
+  'Privacy starts with you! (And PrivacyScanner.org)',
+  'Want to be notified when someone is tracking YOU on the web, and block them? Setup <a href="http://ghostry.com" target="_new">Ghostery</a>',
+  'Want to learn more about how respectful a specific site is of your privacy? Checkout <a href="http://privacychoice.org/" target="_new">PrivacyChoice.org</a>',
+  'Want to visualize who\'s tracking YOU on the web? Checkout <a href="http://www.mozilla.org/en-US/collusion/" target="_new">Mozilla Collusion</a>',
+  'Want sites to stop tracking your usage? Enable \'Do Not Track\' in your browser or install <a href="http://donottrack.us/" target="_new">Abine Do Not Track</a>.',
+  'Only you can prevent forest fires! <img src="http://s2.hubimg.com/u/116245_f260.jpg"/>',
+  '<img src="http://i.qkme.me/3osrh0.jpg"/>'
+];
+
+for (var i = 0; i < messages.length; i++) {
+  //messages.push(messages.unshift());
+}
