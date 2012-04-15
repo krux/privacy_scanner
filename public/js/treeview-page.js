@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // Har data can come from the url, the textarea, or drag and drop
-    //$treeView = $("#treeView")
+    $treeView = $("#treeView");
     //var pathMatch = window.location.search.match(/path=([^&;]+)/);
     //if (pathMatch) {
         // Path supplied in the url
