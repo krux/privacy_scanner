@@ -10,6 +10,7 @@ PS.core = (function ($) {
 
     getHar: function(url) {
       if (PS.utils.isUrl(url)) {
+        $('form p.error').slideUp('fast');
         $.ajax({
           dataType: 'json',
           url: PS.config.ajaxPrefix + '/news.yahoo.com.json',
@@ -19,7 +20,8 @@ PS.core = (function ($) {
         });
       } else {
         _self.messageUser({
-          selector: 'form',
+          selector: 'form p.message',
+          type: 'error',
           message: 'Hmmm...not a great URL dude.'
           
         });
@@ -28,15 +30,16 @@ PS.core = (function ($) {
 
     messageUser: function(options) { 
       var settings = {
-        selector: '#content',
-        message: 'Error'
+        selector: 'p.error',
+        message: 'Error',
+        type: 'error'
       };
 
       if (options) {
         $.extend(settings, options);
       }
 
-      $(settings.selector).append('<p class="error">' + settings.message + '</p>');
+      $(settings.selector).html(settings.message).addClass(settings.type).slideDown('fast');
     },
 
     getParentIDs: function() {
