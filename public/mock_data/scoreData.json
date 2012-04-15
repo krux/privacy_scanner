@@ -1,0 +1,41 @@
+// Mockup of Score and Recommendations for Yahoo.com
+
+{
+     "healthColl": 67, // may be better defined as avgCollScore
+	 "numColl": 23,
+	 "maxCollScore": 89,
+	 "minCollScore": 46,
+	 "medCollScore": 75,
+     "avgCollScore": 67,
+	 "percentSupportP3P": 25,
+	 "percentSupportDNT": 46,
+	 "supportsP3PSite": true,
+	 "listColl":
+	 [
+		{
+			"nameColl": "doubleclick.com",
+			"scoreColl": 57,
+			"countChildrenColl": 12,
+			"percentSiteBandwidthColl": 8.67,
+			"supportsP3PColl": true,
+			"supportsDNTColl": true
+		},
+		{
+			"nameColl": "cnbc.com",
+			"scoreColl": 68,
+			"countChildrenColl": 12,
+			"percentSiteBandwidthColl": 8.67,
+			"supportsP3PColl": true,
+			"supportsDNTColl": true
+		}
+	 ]
+	 "dupeRequests":
+	 [
+		{
+			"name": "" // I'm not sure what this looks like.
+		},
+		{
+			"name:" "" // I'm not sure what this looks like.
+		},
+	 ]
+ }
