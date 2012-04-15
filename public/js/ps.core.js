@@ -12,11 +12,12 @@ PS.core = (function ($) {
       if (PS.utils.isUrl(url)) {
         $('form p.error').slideUp(75);
         $.ajax({
-          dataType: 'text',
-          url: PS.config.ajaxPrefix + '/krux.json',
+          dataType: 'jsonp',
+          jsonp: 'jsoncallback',
+          url: 'http://www.privacyscanner.org/api/v1/privacy/' + url,
           success: function(data){
             cache = data;
-            processTreeView(data, $treeView);
+            processTreeView(JSON.stringify(data), $treeView);
           }
         });
       } else {
