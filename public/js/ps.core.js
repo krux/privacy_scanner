@@ -68,6 +68,19 @@ PS.core = (function ($) {
       score = cache.overall_privacy_score;
 
       $('.score p').html(score);
+    },
+
+    hideTabs: function() {
+      $('tabs-module').slideUp(100);
+    },
+
+    showTabs: function() {
+      $('tabs-module').slideDown(100);
+    },
+
+    clearContent: function() {
+      $('#treeView').html('');
+      $('.recommendations ul').html('');
     }
 
   };
