@@ -70,8 +70,9 @@ PS.ui = (function ($) {
       },
 
       setUpCloseClickHandlers: function ($elem, overlayEl) {
+        var that = this;
         $elem.click(function () {
-          this.close(overlayEl);
+          that.close(overlayEl);
         });
       },
 
