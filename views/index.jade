@@ -14,7 +14,7 @@ block content
         li
           a(href='#panel-2') Tree View
         li
-          a(href='#panel-3') Visualization
+          a(href='#panel-3') Sunburst
       div(class = 'panel', data-role='panel', data-panel-id='#panel-1')
         div.score
           h1 Score
@@ -26,7 +26,7 @@ block content
         div#summary
         div#treeView
       div(class = 'panel', data-role='panel', data-panel-id='#panel-3')
-        div#container
+        div.gallery#chart
 
 block scripts
   script(type='text/javascript')
@@ -39,6 +39,7 @@ block scripts
         $(document).bind('harData', 'body', function (evt, data) {
           console.log('harData: ', data);
           processTreeView(JSON.stringify(data), $('#treeView'));
+          setup_burst(har);
           PS.core.reportScore(data.overall_privacy_score);
           PS.core.reportRecommendations(data.privacy_recommendations);
         });
