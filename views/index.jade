@@ -3,8 +3,8 @@ extends layout
 block content
   div#content
     form.url
-      input(placeholder='Enter a URL to learn more about its privacy rating')
-      div(class='button', data-role='submit') Submit
+      input(class='text', placeholder='Enter a URL to learn more about its privacy rating')
+      input(type='submit', class='button', data-role='submit') Submit
 
     div(class='tabs-module', data-role = 'tabs-module')
       ul(class = 'tabs', data-role = 'tabs')
@@ -31,9 +31,9 @@ block scripts
   script(type='text/javascript')
     $(document).ready(function() { 
       PS.ui.tabs();
-
-      $('[data-role="submit"]').click(function(evt){
-        $url = $('.url input').val();
+      $('form').submit(function(evt){
+        $url = $(this).find('input').val();
         PS.core.getHar($url);
+        evt.preventDefault();
       });
     });
