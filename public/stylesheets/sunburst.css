@@ -67,3 +67,9 @@ a#close {
   top: -15px;
   width: 35px;
 }
+
+.gallery {
+  position: static;
+  left: 100%;
+  width: 100%;
+}
