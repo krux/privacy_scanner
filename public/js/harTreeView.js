@@ -313,19 +313,19 @@ HarTreeView.htmlHarTree = function(branch, htmlId){
 
 
 HarTreeView.htmlHeader = function(domchecked, csschecked) {
-    var header = '<div id="treecontrol">' +
-      '<a title="Collapse the entire tree below">' +
-      '<img src="' + HarTreeView.imageBase + 'twistyOpen.png" /> Collapse All</a>' +
-      '<a title="Expand the entire tree below">' +
-      '<img src="' + HarTreeView.imageBase + 'twistyClosed.png" /> Expand All</a> ' +
-      ' - <span style="color:#999; font-size:smaller"><i>Something not looking right? Try refreshing.</i></span>' +
-      '<span id="exposer_button" title="Expose off-site resources on this page." style="display: none;">Expose</span>'+
-      '<span id="treefilters">'+
+    var header = 
+        '<span id="treefilters">'+
         '<b>Include:</b>' +
         '<input type="checkbox" id="cksame_domain" '+ (domchecked ? 'checked="true" ' : '') +'/><label for="cksame_domain">*.' + HarTreeView.base_domain + '</label>'+
         '<input type="checkbox" id="ckcss_bg" '+ (csschecked ? 'checked="true" ' : '') +'/><label for="ckcss_bg">CSS Images</label>'+
-      '</span>'+
-    '</div>';
+        '</span>'+
+        '<div id="treecontrol">' +
+        '<a title="Collapse the entire tree below">' +
+        '<img src="' + HarTreeView.imageBase + 'twistyOpen.png" /> Collapse All</a>' +
+        '<a title="Expand the entire tree below">' +
+        '<img src="' + HarTreeView.imageBase + 'twistyClosed.png" /> Expand All</a> ' +
+        '<span id="exposer_button" title="Expose off-site resources on this page." style="display: none;">Expose</span>'+
+        '</div>';
     try {
       //Firebug;
       header += '<img src="'+ HarTreeView.imageBase +'lgo-krux.png" class="tree_krux_logo"/>';
