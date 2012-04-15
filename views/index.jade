@@ -36,5 +36,9 @@ block scripts
         $url = $(this).find('input').val();
         PS.core.getHar($url);
         evt.preventDefault();
+        $(document).bind('harData', 'body', function (evt, data) {
+          console.log('harData: ', data);
+          processTreeView(JSON.stringify(data), $('#treeView'));
+        });
       });
     });
