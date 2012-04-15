@@ -32,12 +32,19 @@ block scripts
   script(type='text/javascript')
     $(document).ready(function() { 
       PS.ui.tabs();
+      PS.core.hideTabs();
+      
       $('form').submit(function(evt){
+        PS.core.clearContent();
+        PS.core.hideTabs();
+
         $url = $(this).find('input').val();
         PS.core.getHar($url);
         evt.preventDefault();
+
         $(document).bind('harData', 'body', function (evt, data) {
           console.log('harData: ', data);
+          PS.core.showTabs();
           processTreeView(JSON.stringify(data), $('#treeView'));
           setup_burst(har);
           PS.core.reportScore(data.overall_privacy_score);
