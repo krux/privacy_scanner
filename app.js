@@ -34,7 +34,7 @@ app.configure('production', function() {
 });
 
 // Routes
-app.get('/scanner', function(req, res) {
+app.get('/', function(req, res) {
   res.render('index', {
     title: 'Privacy Scanner',
     PSConfig: app.set('PSConfig')
