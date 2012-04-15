@@ -42,6 +42,49 @@ PS.ui = (function ($) {
         swapPanel(tab);
         evt.preventDefault();
       });
+    },
+
+    overlay: {
+      init: function (triggerElem) {
+        overlay.trigger = typeof triggerElem !== 'undefined' ? $(triggerElem) : $('[data-role="overlay-trigger"]');
+        var overlayEl;
+
+        overlay.trigger.click(function (evt) {
+          evt.preventDefault();
+          overlayEl = $(this).data('overlay');
+          overlay.open($(overlayEl));
+        })
+      },
+
+      open: function (overlayEl) {
+        var mask = $('#overlay-mask');
+
+        mask.fadeIn('1000');
+        overlay.positionOverlay(overlayEl);
+        overlay.fadeIn('fast');
+        overlay.setUpCloseClickHandlers(mask, overlayEl);
+        overlay.setUpCloseClickHandlers(overlayEl.find('.close'), overlayEl);
+      },
+
+      positionOverlay: function (overlayEl) {
+        var winH = $(window).height(),
+            winW = $(window).width();
+
+        //Set the popup window to center
+        overlayEl.css('top',  winH/2 - overlayEl.height()/2);
+        overlayEl.css('left', winW/2 - overlayEl.width()/2);
+      },
+
+      setUpCloseClickHandlers: function ($elem, overlayEl) {
+        $elem.click(function () {
+          overlay.close(overlayEl);
+        });
+      },
+
+      close: function (overlayEl) {
+        $('#overlay-mask').hide();
+        overlayEl.hide();
+      }
     }
   };
 
