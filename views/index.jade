@@ -28,6 +28,8 @@ block content
       div(class = 'panel', data-role='panel', data-panel-id='#panel-3')
         div.gallery#chart
 
+    div(class='overlay')
+      img(src='img/loading.gif')
 block scripts
   script(type='text/javascript')
     $(document).ready(function() { 
@@ -35,6 +37,7 @@ block scripts
       PS.core.hideTabs();
 
       $('form').submit(function(evt){
+        PS.ui.overlay.init();
         PS.core.clearContent();
         PS.core.hideTabs();
 
@@ -43,6 +46,8 @@ block scripts
         evt.preventDefault();
 
         $(document).bind('harData', 'body', function (evt, data) {
+
+          PS.ui.overlay.close();
           console.log('harData: ', data);
           PS.core.showTabs();
           processTreeView(JSON.stringify(data), $('#treeView'));

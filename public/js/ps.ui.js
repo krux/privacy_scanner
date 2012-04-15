@@ -45,25 +45,19 @@ PS.ui = (function ($) {
     },
 
     overlay: {
-      init: function (triggerElem) {
-        overlay.trigger = typeof triggerElem !== 'undefined' ? $(triggerElem) : $('[data-role="overlay-trigger"]');
-        var overlayEl;
-
-        overlay.trigger.click(function (evt) {
-          evt.preventDefault();
-          overlayEl = $(this).data('overlay');
-          overlay.open($(overlayEl));
-        })
+      init: function (overlayElem) {
+        var overlayEl = $('div.overlay');
+        this.open(overlayEl);
       },
 
       open: function (overlayEl) {
         var mask = $('#overlay-mask');
 
         mask.fadeIn('1000');
-        overlay.positionOverlay(overlayEl);
-        overlay.fadeIn('fast');
-        overlay.setUpCloseClickHandlers(mask, overlayEl);
-        overlay.setUpCloseClickHandlers(overlayEl.find('.close'), overlayEl);
+        this.positionOverlay(overlayEl);
+        overlayEl.fadeIn('fast');
+        this.setUpCloseClickHandlers(mask, overlayEl);
+        this.setUpCloseClickHandlers(overlayEl.find('.close'), overlayEl);
       },
 
       positionOverlay: function (overlayEl) {
@@ -77,11 +71,12 @@ PS.ui = (function ($) {
 
       setUpCloseClickHandlers: function ($elem, overlayEl) {
         $elem.click(function () {
-          overlay.close(overlayEl);
+          this.close(overlayEl);
         });
       },
 
-      close: function (overlayEl) {
+      close: function () {
+        var overlayEl = $('.overlay')
         $('#overlay-mask').hide();
         overlayEl.hide();
       }
