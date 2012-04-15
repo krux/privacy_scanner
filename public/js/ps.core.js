@@ -18,6 +18,7 @@ PS.core = (function ($) {
           success: function(data){
             cache = data;
             processTreeView(JSON.stringify(data), $treeView);
+            _self.getScore();
           }
         });
       } else {
@@ -61,8 +62,12 @@ PS.core = (function ($) {
       return cleanParents;
     },
 
-    returnHar: function(data) {
-      return cache;
+    getScore: function() {
+      var score;
+
+      score = cache.overall_privacy_score;
+
+      $('.score p').html(score);
     }
 
   };
