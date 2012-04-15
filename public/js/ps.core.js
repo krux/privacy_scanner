@@ -10,7 +10,7 @@ PS.core = (function ($) {
 
     getHar: function(url) {
       if (PS.utils.isUrl(url)) {
-        $('form p.error').slideUp('fast');
+        $('form p.error').slideUp(75);
         $.ajax({
           dataType: 'json',
           url: PS.config.ajaxPrefix + '/news.yahoo.com.json',
@@ -39,7 +39,7 @@ PS.core = (function ($) {
         $.extend(settings, options);
       }
 
-      $(settings.selector).html(settings.message).addClass(settings.type).slideDown('fast');
+      $(settings.selector).html(settings.message).addClass(settings.type).slideDown(75);
     },
 
     getParentIDs: function() {
