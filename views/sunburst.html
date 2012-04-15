@@ -29,6 +29,32 @@
 <link href='sunburst.css' rel='stylesheet' type='text/css' />
 
 <script src='sunburst.js' type='text/javascript'> </script>
+
+<script type="text/javascript">
+$(window).bind('hashchange', function() {
+  var url = /^#http/.test(location.hash) ? location.hash.replace(/^#/, '') : null;
+  if (url == null) return;
+  jQuery.ajax({
+    url: '/api/v1/privacy/'+ url, 
+    dataType: 'json', 
+    success: function(har) {
+      setup_burst(har);
+    }
+  });
+
+});
+
+jQuery(document).bind('ready', function() {
+  var url = /^#http/.test(location.hash) ? location.hash.replace(/^#/, '') : 'http://drknowledge.com';
+  jQuery.ajax({
+    url: '/api/v1/privacy/'+ url, 
+    dataType: 'json', 
+    success: function(har) {
+      setup_burst(har);
+    }
+  });
+});
+</script>
 </div>
 </body>
 </html>
