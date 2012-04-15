@@ -7,14 +7,15 @@ html(lang="en")
     link(rel = 'stylesheet', href = 'http://mbostock.github.com/d3//syntax.css?1.6.0')
     link(rel = 'stylesheet', href = 'http://mbostock.github.com/d3/style.css?1.10.0')
     link(rel = 'stylesheet', href = 'stylesheets/sunburst.css')
-    script
-      if (typeof PS === 'undefined' || !PS) {
-        var PS = {};
-      } 
-      if (typeof PS.config === 'undefined' || !PS.config) {
-        var PS = {};
-      }
-      PS.config = typeof !{JSON.stringify(PSConfig)} !== 'undefined' ? !{JSON.stringify(PSConfig)} : {};
+    //
+      script
+        if (typeof PS === 'undefined' || !PS) {
+          var PS = {};
+        } 
+        if (typeof PS.config === 'undefined' || !PS.config) {
+          var PS = {};
+        }
+        PS.config = typeof !{JSON.stringify(PSConfig)} !== 'undefined' ? !{JSON.stringify(PSConfig)} : {};
   body
     header
       div.logo
