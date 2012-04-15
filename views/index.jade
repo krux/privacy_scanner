@@ -46,7 +46,7 @@ block scripts
           console.log('harData: ', data);
           PS.core.showTabs();
           processTreeView(JSON.stringify(data), $('#treeView'));
-          setup_burst(har);
+          setup_burst(data);
           PS.core.reportScore(data.overall_privacy_score);
           PS.core.reportRecommendations(data.privacy_recommendations);
         });
