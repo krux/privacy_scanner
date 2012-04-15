@@ -18,6 +18,7 @@ PS.core = (function ($) {
           success: function(data){
             cache = data;
             $(document.body).trigger('harData', [data]);
+            _self.getScore();
           }
         });
       } else {
@@ -61,8 +62,25 @@ PS.core = (function ($) {
       return cleanParents;
     },
 
-    returnHar: function(data) {
-      return cache;
+    getScore: function() {
+      var score;
+
+      score = cache.overall_privacy_score;
+
+      $('.score p').html(score);
+    },
+
+    hideTabs: function() {
+      $('tabs-module').slideUp(100);
+    },
+
+    showTabs: function() {
+      $('tabs-module').slideDown(100);
+    },
+
+    clearContent: function() {
+      $('#treeView').html('');
+      $('.recommendations ul').html('');
     }
 
   };
