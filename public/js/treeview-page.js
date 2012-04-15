@@ -9,8 +9,8 @@ $(document).ready(function() {
         //downloadDiv.fadeIn();
         //$("#summary").html("Loading har file...");
         //$("body").addClass("loading");
-        $.ajax({
-            url: 'mock_data/krux.json',
+        /*$.ajax({
+            url: 'mock_data/news.yahoo.com.json',
             dataType: "text", // otherwise jquery will parse it as json, which we do ourselves.
             success: function(data){
                 $("#summary").html("");
@@ -23,7 +23,7 @@ $(document).ready(function() {
                 $("#summary").html("Error loading har file");
                 $("body").removeClass("loading");
             }
-        });
+        });*/
     //}
 
     $("#treeViewButton").click(function(){

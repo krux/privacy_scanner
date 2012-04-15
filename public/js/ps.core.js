@@ -12,10 +12,11 @@ PS.core = (function ($) {
       if (PS.utils.isUrl(url)) {
         $('form p.error').slideUp(75);
         $.ajax({
-          dataType: 'json',
-          url: PS.config.ajaxPrefix + '/news.yahoo.com.json',
+          dataType: 'text',
+          url: PS.config.ajaxPrefix + '/krux.json',
           success: function(data){
             cache = data;
+            processTreeView(data, $treeView);
           }
         });
       } else {
@@ -23,7 +24,6 @@ PS.core = (function ($) {
           selector: 'form p.message',
           type: 'error',
           message: 'Hmmm...not a great URL dude.'
-          
         });
       }
     },
