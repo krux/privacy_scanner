@@ -1,8 +1,7 @@
 
 #lightbox {
   width: 100%; 
-  height: 100%;
-  opacity: 0.9;
+  height: 10000%;
   background: #000000;
   position: absolute;
   top: 0px;
@@ -35,7 +34,7 @@
 }
 
 .inner_wrapper {
-  position: absolute;
+  position: fixed;
   top: 30px;
   width: 780px;
   min-height: 520px;
@@ -57,7 +56,7 @@
 }
 
 a#close {
-  background: url("close.png") no-repeat scroll left top transparent;
+  background: url("http://snowboards-for-sale.com/images/close.png") no-repeat scroll left top transparent;
   display: block;
   height: 35px;
   overflow: hidden;
