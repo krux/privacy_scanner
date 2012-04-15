@@ -78,7 +78,7 @@ PS.core = (function ($) {
     reportRecommendations: function(recommendations) {
       _.each(recommendations, function (item) {
         $('<li>', {
-          html: '<h2>' + item.headline + '</h2><ul><li><b>Score:</b>' + item.value + '</li><li>' + item.desc + '</li></ul>'
+          html: '<h2><b>' + item.headline + '</b></h2><ul><li>' + item.desc + '</li></ul>'
         }).appendTo($('[data-role="recommendations"]'));
       });
     },
