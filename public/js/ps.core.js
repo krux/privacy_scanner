@@ -65,6 +65,14 @@ PS.core = (function ($) {
       $('.score p').html(score);
     },
 
+    reportRecommendations: function(recommendations) {
+      _.each(recommendations, function (item) {
+        $('<li>', {
+          html: '<h2>' + item.headline + '</h2><ul><li><b>Score:</b>' + item.value + '</li><li>' + item.desc + '</li></ul>'
+        }).appendTo($('[data-role="recommendations"]'));
+      });
+    },
+
     hideTabs: function() {
       $('tabs-module').slideUp(100);
     },
