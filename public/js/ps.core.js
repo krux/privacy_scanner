@@ -11,6 +11,7 @@ PS.core = (function ($) {
     getHar: function(url) {
       if (PS.utils.isUrl(url)) {
         $('form p.error').slideUp(75);
+        PS.ui.overlay.init();
         $.ajax({
           dataType: 'jsonp',
           jsonp: 'jsoncallback',
