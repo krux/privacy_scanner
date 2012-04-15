@@ -328,7 +328,7 @@ HarTreeView.htmlHeader = function(domchecked, csschecked) {
         '</div>';
     try {
       //Firebug;
-      header += '<img src="'+ HarTreeView.imageBase +'lgo-krux.png" class="tree_krux_logo"/>';
+      //header += '<img src="'+ HarTreeView.imageBase +'lgo-krux.png" class="tree_krux_logo"/>';
     } catch (e) { /* Don't show a logo on the web-side, it is redundant redundancy */ }
     header += '<div class="tree_legend"><div class="legend_header" title="The type of request, as determined by the content type header. Data Collection requests are those that look like they are only there for sharing data.">Request Types</div>'+
       '<div class="tree_key"><img src="'+ HarTreeView.imageBase  +'html.png"/><div class="tree_caption">HTML</div></div>'+
