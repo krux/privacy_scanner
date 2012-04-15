@@ -43,6 +43,7 @@ block scripts
         $(document).bind('harData', 'body', function (evt, data) {
           console.log('harData: ', data);
           processTreeView(JSON.stringify(data), $('#treeView'));
+          PS.core.reportScore(data.overall_privacy_score);
         });
       });
     });
