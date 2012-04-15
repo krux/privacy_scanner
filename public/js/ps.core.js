@@ -74,16 +74,17 @@ PS.core = (function ($) {
     },
 
     hideTabs: function() {
-      $('tabs-module').slideUp(100);
+      $('[data-role="tabs-module"]').slideUp(100);
     },
 
     showTabs: function() {
-      $('tabs-module').slideDown(100);
+      $('[data-role="tabs-module"]').slideDown(100);
     },
 
     clearContent: function() {
       $('#treeView').html('');
       $('.recommendations ul').html('');
+      $('#chart').html('');
     }
 
   };
