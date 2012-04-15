@@ -31,6 +31,12 @@ app.configure('development', function() {
 
 app.configure('production', function() {
   app.use(express.errorHandler()); 
+  app.use(require('stylus').middleware({
+    force: true,
+    src: __dirname + '/public',
+    dest: __dirname + '/public',
+    compress: true
+  }));
 });
 
 // Routes
