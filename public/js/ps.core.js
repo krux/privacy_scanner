@@ -18,7 +18,6 @@ PS.core = (function ($) {
           success: function(data){
             cache = data;
             $(document.body).trigger('harData', [data]);
-            _self.getScore();
           }
         });
       } else {
@@ -62,11 +61,7 @@ PS.core = (function ($) {
       return cleanParents;
     },
 
-    getScore: function() {
-      var score;
-
-      score = cache.overall_privacy_score;
-
+    reportScore: function(score) {
       $('.score p').html(score);
     },
 
