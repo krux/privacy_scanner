@@ -17,7 +17,7 @@ PS.core = (function ($) {
           url: 'http://www.privacyscanner.org/api/v1/privacy/' + url,
           success: function(data){
             cache = data;
-            processTreeView(JSON.stringify(data), $treeView);
+            $(document.body).trigger('harData', [data]);
           }
         });
       } else {
