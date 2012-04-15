@@ -3,7 +3,10 @@ html(lang="en")
   head
     title
     link(rel = 'stylesheet', href = 'stylesheets/style.css')
+    link(rel = 'stylesheet', href = 'stylesheets/sunburst.css')
     link(rel = 'stylesheet', href = 'vendor/treeview/css/treeview.css')
+    link(rel = 'stylesheet', href = 'http://mbostock.github.com/d3//syntax.css?1.6.0')
+    link(rel = 'stylesheet', href = 'http://mbostock.github.com/d3/style.css?1.10.0')
     script
       if (typeof PS === 'undefined' || !PS) {
         var PS = {};
@@ -16,9 +19,11 @@ html(lang="en")
     header
       div.logo
         a(href='/') PrivacyScanner
-          span Is your site sharing its users' data?
+          span Put in a URL, we give you back privacy info.
     block content
     script(src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+    script(src = 'http://mbostock.github.com/d3//d3.v2.js?2.8.1')
+    script(src = 'js/sunburst.js')
     script(src = 'js/underscore.js')
     script(src = 'vendor/treeview/js/jquery.treeview.js')
     script(src = 'js/harParser.js')

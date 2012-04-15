@@ -62,20 +62,39 @@ PS.core = (function ($) {
     },
 
     reportScore: function(score) {
-      $('.score p').html(score);
+      $('.score p').html(score).parent().addClass(_self.getScoreClass(score));
+    },
+
+    getScoreClass: function(score) {
+      if (score >= 80) {
+        return 'congrats';
+      } else if (score <= 80 && score >= 70) {
+        return 'warning';
+      } else {
+        return 'error';
+      }
+    },
+
+    reportRecommendations: function(recommendations) {
+      _.each(recommendations, function (item) {
+        $('<li>', {
+          html: '<h2>' + item.headline + '</h2><ul><li><b>Score:</b>' + item.value + '</li><li>' + item.desc + '</li></ul>'
+        }).appendTo($('[data-role="recommendations"]'));
+      });
     },
 
     hideTabs: function() {
-      $('tabs-module').slideUp(100);
+      $('[data-role="tabs-module"]').slideUp(100);
     },
 
     showTabs: function() {
-      $('tabs-module').slideDown(100);
+      $('[data-role="tabs-module"]').slideDown(100);
     },
 
     clearContent: function() {
       $('#treeView').html('');
       $('.recommendations ul').html('');
+      $('#chart').html('');
     }
 
   };
