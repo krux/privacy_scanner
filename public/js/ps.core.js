@@ -25,7 +25,7 @@ PS.core = (function ($) {
         _self.messageUser({
           selector: 'form p.message',
           type: 'error',
-          message: 'Hmmm...not a great URL dude.'
+          message: 'You have entered a malformed URL.'
         });
       }
     },
