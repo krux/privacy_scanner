@@ -31,10 +31,16 @@ app.configure('development', function() {
 
 app.configure('production', function() {
   app.use(express.errorHandler()); 
+  app.use(require('stylus').middleware({
+    force: true,
+    src: __dirname + '/public',
+    dest: __dirname + '/public',
+    compress: true
+  }));
 });
 
 // Routes
-app.get('/scanner', function(req, res) {
+app.get('/', function(req, res) {
   res.render('index', {
     title: 'Privacy Scanner',
     PSConfig: app.set('PSConfig')
