@@ -9,13 +9,34 @@ PS.core = (function ($) {
   _self = {
 
     getHar: function(url) {
-      $.ajax({
-        dataType: 'json',
-        url: PS.config.ajaxPrefix + '/news.yahoo.com.json',
-        success: function(data){
-          cache = data;
-        }
-      });
+      if (PS.utils.isUrl(url)) {
+        $.ajax({
+          dataType: 'json',
+          url: PS.config.ajaxPrefix + '/news.yahoo.com.json',
+          success: function(data){
+            cache = data;
+          }
+        });
+      } else {
+        _self.messageUser({
+          selector: 'form',
+          message: 'Hmmm...not a great URL dude.'
+          
+        });
+      }
+    },
+
+    messageUser: function(options) { 
+      var settings = {
+        selector: '#content',
+        message: 'Error'
+      };
+
+      if (options) {
+        $.extend(settings, options);
+      }
+
+      $(settings.selector).append('<p class="error">' + settings.message + '</p>');
     },
 
     getParentIDs: function() {
